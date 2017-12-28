@@ -128,10 +128,6 @@ function Ball() {
 
     this.hit = function(mouseXPos, mouseYPos) {
         var distance = dist(this.pin.x, this.pin.y, mouseXPos, mouseYPos);
-        console.log("x,y: " + this.pin.x + "," + this.pin.y);
-        console.log("mouseX,mouseY: " + mouseXPos + "," + mouseYPos);
-        console.log("diameter/2: " + (this.diameter / 2))
-        console.log("distance: " + distance);
         if (distance <= (this.diameter / 2) && !this.wasHit) {
             this.wasHit = true;
         }
