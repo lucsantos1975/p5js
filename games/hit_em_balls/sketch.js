@@ -10,8 +10,8 @@ const ballConfigs = [
     {color: {r: 255, g:   0, b:   0}, points: -2}, // red
     {color: {r: 255, g: 125, b:   0}, points: -1}, // orange
     {color: {r: 255, g: 255, b:   0}, points:  0}, // yellow
-    {color: {r:   0, g: 255, b:   0}, points:  2}, // green
-    {color: {r:   0, g:   0, b: 255}, points:  1}  // blue
+    {color: {r:   0, g: 255, b:   0}, points:  1}, // green
+    {color: {r:   0, g:   0, b: 255}, points:  2}  // blue
 ];
 
 // 6x6 points matrix for balls centers
@@ -30,7 +30,7 @@ const ballLifes = [50, 100, 200, 300, 400];
 const ballMinDiameter = 40;
 const ballMaxDiameter = 80;
 
-const ballCount = 6;
+const ballCount = 2;
 
 var balls = [];
 var points = 0;
@@ -130,9 +130,9 @@ function Ball() {
         var distance = dist(this.pin.x, this.pin.y, mouseXPos, mouseYPos);
         console.log("x,y: " + this.pin.x + "," + this.pin.y);
         console.log("mouseX,mouseY: " + mouseXPos + "," + mouseYPos);
-        console.log("diameter: " + this.diameter)
+        console.log("diameter/2: " + (this.diameter / 2))
         console.log("distance: " + distance);
-        if (distance <= this.diameter && !this.wasHit) {
+        if (distance <= (this.diameter / 2) && !this.wasHit) {
             this.wasHit = true;
         }
 
