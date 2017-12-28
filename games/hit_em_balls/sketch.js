@@ -27,7 +27,7 @@ const pins = [
 // ball life in seconds = ballLife / (gameFrameRate ^ 2)
 const ballLifes = [50, 100, 200, 300, 400];
 
-const ballMinDiameter = 30;
+const ballMinDiameter = 40;
 const ballMaxDiameter = 80;
 
 const ballCount = 6;
@@ -86,7 +86,7 @@ function Ball() {
     this.color = null;   
     this.points = 0;
     this.life = 0;
-    this.wasHitted = false;
+    this.wasHit = false;
 
     this.show = function() {
         if (this.life > 0) {
@@ -113,10 +113,10 @@ function Ball() {
 
             this.life = random(ballLifes);
 
-            this.wasHitted = false;            
+            this.wasHit = false;            
         }
         
-        if (this.wasHitted) {
+        if (this.wasHit) {
             fill(0);
         } else {
             fill(this.color.r, this.color.g, this.color.b);
@@ -128,11 +128,14 @@ function Ball() {
 
     this.hit = function(mouseXPos, mouseYPos) {
         var distance = dist(this.pin.x, this.pin.y, mouseXPos, mouseYPos);
-        if (distance <= this.diameter && !this.wasHitted) {
-            this.wasHitted = true;
-            return true;
+        console.log("x,y: " + this.pin.x + "," + this.pin.y);
+        console.log("mouseX,mouseY: " + mouseXPos + "," + mouseYPos);
+        console.log("diameter: " + this.diameter)
+        console.log("distance: " + distance);
+        if (distance <= this.diameter && !this.wasHit) {
+            this.wasHit = true;
         }
 
-        return false;
+        return this.wasHit;
     }
 }
