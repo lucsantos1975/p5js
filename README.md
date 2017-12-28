@@ -18,3 +18,9 @@ Criar o jogo "Hit 'em Balls"
 
 Hint:
 - para saber se a bola foi atingida: a distância entre a coordenada xy do clique até a coordenada xy do centro da bola deve ser igual ou menor que o raio da bola.
+
+Melhorias:
+- tela inicial com botão "start game";
+- tempo fixo para o jogo (por exemplo, 60 segundos);
+- tela "game over";
+- tela "high scores";
