@@ -15,3 +15,6 @@ Criar o jogo "Hit 'em Balls"
 - após clicadas, as bolas devem mudar de aparência (para indicar que não é possível clicar novamente);
 - 6 bolas visíveis simultaneamente;
 - barra de status com o score do jogo;
+
+Hint:
+- para saber se a bola foi atingida: a distância entre a coordenada xy do clique até a coordenada xy do centro da bola deve ser igual ou menor que o raio da bola.
